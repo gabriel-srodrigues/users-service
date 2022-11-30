@@ -1,0 +1,7 @@
+app:
+  authentication:
+    keycloak:
+      realm: digitalhouse
+      server-url: http://localhost:8082
+      client-id: admin-client
+      client-secret: UFbQtNJZ26gL7MRFSIuZRq43Hq7EeseB
