@@ -1,10 +1,6 @@
-package br.com.dh.usersservice.configuration.properties;
+package br.com.dh.usersservice.infrastructure.configuration.keycloak.properties;
 
-import org.keycloak.OAuth2Constants;
-import org.keycloak.admin.client.Keycloak;
-import org.keycloak.admin.client.KeycloakBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;

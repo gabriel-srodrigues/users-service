@@ -1,6 +1,6 @@
-package br.com.dh.usersservice.configuration.keycloak;
+package br.com.dh.usersservice.infrastructure.configuration.keycloak;
 
-import br.com.dh.usersservice.configuration.properties.KeycloakProperties;
+import br.com.dh.usersservice.infrastructure.configuration.keycloak.properties.KeycloakProperties;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
