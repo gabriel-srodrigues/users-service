@@ -32,9 +32,8 @@ public class UserKeycloakRepository implements UserRepository {
                          User.newUser(
                                 usuario.getFirstName(),
                                 usuario.getLastName(),
-                                usuario.getAttributes().get("COR").get(0),
-                                usuario.getAttributes().get("NACIONALIDADE").get(0))
-                    ).toList();
+                                 "Lilas",
+                                 "Brasil")).toList();
     }
 
     @Override

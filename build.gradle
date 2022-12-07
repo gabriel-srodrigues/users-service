@@ -27,6 +27,12 @@ dependencies {
     implementation "org.projectlombok:lombok:${lombokVersion}"
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
 
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.1.5'
+
+
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
