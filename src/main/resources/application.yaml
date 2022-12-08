@@ -5,3 +5,18 @@ app:
       server-url: http://localhost:8082
       client-id: admin-client
       client-secret: UFbQtNJZ26gL7MRFSIuZRq43Hq7EeseB
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          users-service-registration:
+            provider: users-service-provider
+            client-id: users-service
+            client-secret: 1DbhMTZAv88xRgR0cNBI7IQ8uUvNuNeG
+            authorization-grant-type: client_credentials
+        provider:
+          users-service-provider:
+            issuer-uri: http://localhost:8082/realms/digitalhouse
+
+

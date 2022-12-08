@@ -6,5 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UsersClaimsResponse {
-    //:todo definar response posteriormente
+    private String cor;
+    private String nacionalidade;
 }

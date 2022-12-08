@@ -1,6 +1,7 @@
 package br.com.dh.usersservice.users.api.controller;
 
 import br.com.dh.usersservice.users.api.assembler.UserMapper;
+import br.com.dh.usersservice.users.api.dto.UserResponse;
 import br.com.dh.usersservice.users.api.openapi.UserApi;
 import br.com.dh.usersservice.users.domain.model.User;
 import br.com.dh.usersservice.users.domain.service.UserService;
@@ -23,6 +24,13 @@ public class UserController implements UserApi {
     public ResponseEntity<?> search() {
         List<User> allUsers = userService.search();
         final var response = allUsers.stream().map(mapper::toResponse).toList();
+        return ResponseEntity.ok(response);
+    }
+
+    @Override
+    public ResponseEntity<UserResponse> findByID(String id) {
+        User user = userService.findByID(id);
+        UserResponse response = mapper.toResponse(user);
         return ResponseEntity.ok(response);
     }
 

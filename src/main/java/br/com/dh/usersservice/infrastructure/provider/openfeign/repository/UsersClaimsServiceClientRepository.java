@@ -7,12 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(
-        name = "users-claims-service",
-        url = "http://localhost:8081",
-        configuration = KeycloakInterceptorConfiguration.class
-)
-public interface UsersClaimsServiceClient {
+@FeignClient(name = "users-claims-service", url = "http://localhost:8081/", configuration = KeycloakInterceptorConfiguration.class)
+public interface UsersClaimsServiceClientRepository {
 
     @GetMapping("{userID}")
     ResponseEntity<UsersClaimsResponse> get(@PathVariable String userID);

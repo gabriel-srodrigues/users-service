@@ -9,4 +9,6 @@ public interface UserService {
     List<User> search();
 
     void update(String id, String cor);
+
+    User findByID(String id);
 }

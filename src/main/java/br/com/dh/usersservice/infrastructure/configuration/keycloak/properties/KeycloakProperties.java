@@ -15,7 +15,6 @@ public class KeycloakProperties {
     private String clientSecret;
 
 
-
     public String getRealm() {
         return realm;
     }

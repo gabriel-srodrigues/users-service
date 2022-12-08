@@ -9,4 +9,6 @@ public interface UserRepository {
     List<User> findAll();
 
     void update(String id, String cor);
+
+    User findByID(String id);
 }

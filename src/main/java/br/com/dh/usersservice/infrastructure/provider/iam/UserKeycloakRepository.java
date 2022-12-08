@@ -4,6 +4,7 @@ import br.com.dh.usersservice.infrastructure.configuration.keycloak.properties.K
 import br.com.dh.usersservice.users.domain.model.User;
 import br.com.dh.usersservice.users.domain.repository.UserRepository;
 import org.keycloak.admin.client.Keycloak;
+import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.stereotype.Repository;
 
@@ -25,15 +26,15 @@ public class UserKeycloakRepository implements UserRepository {
     public List<User> findAll() {
         return keycloak
                 .realm(realm)
-                    .users()
+                .users()
                 .list()
                 .stream()
-                    .map(usuario ->
-                         User.newUser(
+                .map(usuario ->
+                        User.newUser(
                                 usuario.getFirstName(),
                                 usuario.getLastName(),
-                                 "Lilas",
-                                 "Brasil")).toList();
+                                "Lilas",
+                                "Brasil")).toList();
     }
 
     @Override
@@ -48,5 +49,12 @@ public class UserKeycloakRepository implements UserRepository {
         usuario.setAttributes(attributes);
 
         usuarioResource.update(usuario);
+    }
+
+    @Override
+    public User findByID(String id) {
+        UserResource userResource = keycloak.realm(realm).users().get(id);
+        UserRepresentation representation = userResource.toRepresentation();
+        return User.newUser(representation.getFirstName(), representation.getLastName(), "Lilas", "Brasil");
     }
 }

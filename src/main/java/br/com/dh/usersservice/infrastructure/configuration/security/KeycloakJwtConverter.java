@@ -47,21 +47,6 @@ public class KeycloakJwtConverter implements Converter<Jwt, AbstractAuthenticati
 
     }
 
-    private static List<GrantedAuthority> extractRolesForResources(String route, JsonNode jwt) {
-        Set<String> rolesWithPrefix = new HashSet<>();
-
-        jwt.path(route)
-                .elements()
-
-                .forEachRemaining(ee -> ee.path("gateway")
-                        .elements()
-                .forEachRemaining(e -> e.path("roles")
-                        .elements()
-                        .forEachRemaining(r -> rolesWithPrefix.add("ROLE_" + r.asText()))));
-
-        return AuthorityUtils.createAuthorityList(rolesWithPrefix.toArray(new String[0]));
-
-    }
 
     private static List<GrantedAuthority> extractAud(String route, JsonNode jwt) {
         Set<String> rolesWithPrefix = new HashSet<>();
